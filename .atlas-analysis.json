@@ -1,0 +1,158 @@
+{
+  "projectType": "api-service",
+  "projectName": "Sportscanner",
+  "projectDescription": "API service for finding and comparing badminton, squash, and pickleball court availability across London venues",
+  "theme": "palm",
+  "primaryColor": "#16a34a",
+  "lightColor": "#22c55e",
+  "darkColor": "#15803d",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "authentication"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/architecture",
+              "concepts/sports-coverage",
+              "concepts/data-refresh"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/searching-courts",
+              "guides/venue-discovery",
+              "guides/geolocation"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "api/overview",
+              "api/errors"
+            ]
+          },
+          {
+            "group": "Search",
+            "pages": [
+              "api/search/search-courts",
+              "api/search/search-venue-courts"
+            ]
+          },
+          {
+            "group": "Venues",
+            "pages": [
+              "api/venues/list-all",
+              "api/venues/by-sport",
+              "api/venues/nearby",
+              "api/venues/get-venue"
+            ]
+          },
+          {
+            "group": "Geolocation",
+            "pages": [
+              "api/geolocation/postcode-lookup"
+            ]
+          },
+          {
+            "group": "Notifications",
+            "pages": [
+              "api/notifications/list",
+              "api/notifications/acknowledge"
+            ]
+          },
+          {
+            "group": "Health",
+            "pages": [
+              "api/health/status"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Crawlers",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "crawlers/introduction",
+              "crawlers/pipeline"
+            ]
+          },
+          {
+            "group": "Parsers",
+            "pages": [
+              "crawlers/parsers/better-leisure",
+              "crawlers/parsers/active-lambeth",
+              "crawlers/parsers/everyone-active",
+              "crawlers/parsers/adding-new"
+            ]
+          },
+          {
+            "group": "Data Management",
+            "pages": [
+              "crawlers/database-schema",
+              "crawlers/scheduling"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Deployment",
+        "groups": [
+          {
+            "group": "Setup",
+            "pages": [
+              "deployment/environment",
+              "deployment/docker",
+              "deployment/database"
+            ]
+          },
+          {
+            "group": "Operations",
+            "pages": [
+              "deployment/monitoring",
+              "deployment/troubleshooting"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Multi-sport court availability search (Badminton, Squash, Pickleball)",
+    "Geolocation-based venue discovery with distance filtering",
+    "Automated web crawling with Playwright for real-time data",
+    "RESTful API with FastAPI and OpenAPI documentation",
+    "PostgreSQL database with SQLModel ORM",
+    "Scheduled data refresh pipeline via GitHub Actions",
+    "Price comparison and booking link aggregation"
+  ],
+  "publicApiSurface": [
+    "POST /search/{sport} - Search for available courts by sport and filters",
+    "POST /search/{sport}/{composite_key} - Get specific venue availability",
+    "GET /venues/ - List all sports venues",
+    "GET /venues/sports/{sport} - Get venues offering specific sport",
+    "GET /venues/near - Find venues near postcode within radius",
+    "GET /venues/{composite_key} - Get venue information",
+    "GET /geolocation/postcode/{postcode} - Get postcode geolocation data",
+    "GET /notifications/ - List active notifications",
+    "POST /notifications/acknowledge - Acknowledge notification",
+    "GET /health/status - API health check"
+  ]
+}
